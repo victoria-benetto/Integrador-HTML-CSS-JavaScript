@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Final</title>
+    <link rel="icon" href="https://img.freepik.com/vector-gratis/ilustracion-dibujos-animados-hamburguesa-dibujada-mano_23-2150623475.jpg?t=st=1729524554~exp=1729528154~hmac=e268fb98f25295e6b8b271dfcab268f03ffab390df96b676ac8a7c2554ace20c&w=826">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+        <nav class="navbar">
+            <input type="text" id="searchBar" placeholder="Buscar productos...">
+            <button id="openModalBtn">Agregar Producto</button>
+        </nav>
+    </header>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agregar Producto</h2>
+            <form id="modalForm">
+                <label for="modalNombre">Nombre del Producto:</label>
+                <input type="text" id="modalNombre" required>
+                
+                <label for="modalImagen">URL de Imagen:</label>
+                <input type="url" id="modalImagen" required>
+                
+                <label for="modalPrecio">Precio:</label>
+                <input type="number" id="modalPrecio" required>
+                
+                <label for="modalCategoria">Categoría:</label>
+                <select id="modalCategoria">
+                    <option value="hamburguesa">Hamburguesa</option>
+                    <option value="papas">Papas</option>
+                    <option value="gaseosa">Gaseosa</option>
+                    <option value="postre">Postre</option>
+                </select>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+      <aside id="sidebar">
+          <h3>Filtros</h3>
+          <ul>
+              <li><button class="filter-btn" data-category="all">Todos los productos</button></li>
+              <li><button class="filter-btn" data-category="hamburguesa">Hamburguesas</button></li>
+              <li><button class="filter-btn" data-category="papas">Papas</button></li>
+              <li><button class="filter-btn" data-category="gaseosa">Gaseosas</button></li>
+              <li><button class="filter-btn" data-category="postre">Postres</button></li>
+              <li><button class="filter-btn" data-sort="asc">Menor Precio</button></li>
+              <li><button class="filter-btn" data-sort="desc">Mayor Precio</button></li>
+          </ul>
+      </aside>
+
+      <section id="menu">
+          <h2>Menú de Comidas</h2>
+          <div id="productos"></div>
+      </section>
+  </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
